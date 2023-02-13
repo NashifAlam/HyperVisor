@@ -41,28 +41,28 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QCheckBox" name="Nitro">
        <property name="text">
         <string>Nitro</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="DRS">
        <property name="text">
         <string>DRS</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_3">
+      <widget class="QCheckBox" name="ExhaustBypass">
        <property name="text">
         <string>Exhaust Bypass</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_4">
+      <widget class="QCheckBox" name="TC">
        <property name="text">
         <string>Traction control</string>
        </property>
@@ -72,7 +72,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_5">
+      <widget class="QCheckBox" name="ABS">
        <property name="text">
         <string>ABS</string>
        </property>
@@ -82,7 +82,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_9">
+      <widget class="QCheckBox" name="Cabin">
        <property name="text">
         <string>Cabin Filter Status</string>
        </property>
@@ -92,23 +92,16 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="Engine">
        <property name="text">
         <string>Check Engine</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QCheckBox" name="OilPressure">
        <property name="text">
         <string>Oil Pressure low </string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="text">
-        <string>Coolant Check</string>
        </property>
       </widget>
      </item>
@@ -127,7 +120,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox_8">
+      <widget class="QSpinBox" name="Lrp">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="maximum">
         <number>100</number>
        </property>
@@ -144,7 +140,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox_6">
+      <widget class="QSpinBox" name="TV">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="minimum">
         <number>-99</number>
        </property>
@@ -161,7 +160,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+      <widget class="QDoubleSpinBox" name="DWR">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="maximum">
         <double>200.990000000000009</double>
        </property>
@@ -178,7 +180,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+      <widget class="QDoubleSpinBox" name="TW">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="minimum">
         <double>700.000000000000000</double>
        </property>
@@ -195,7 +200,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+      <widget class="QDoubleSpinBox" name="DF">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
        <property name="maximum">
         <double>10.990000000000000</double>
        </property>
@@ -203,6 +211,34 @@
         <double>7.000000000000000</double>
        </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="serialPortSelect_comboBox"/>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="2" column="1">
+        <widget class="QPushButton" name="disconnect_button">
+         <property name="text">
+          <string>disconnect</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="connect_button">
+         <property name="text">
+          <string>connect</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
@@ -216,8 +252,35 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="3">
-      <widget class="QLabel" name="label_44">
+     <item row="1" column="0">
+      <widget class="QSlider" name="Sus1">
+       <property name="sliderPosition">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="5">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>S4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_39">
+       <property name="text">
+        <string>F1I1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLabel" name="label_46">
        <property name="frameShape">
         <enum>QFrame::Box</enum>
        </property>
@@ -227,40 +290,33 @@
        <property name="text">
         <string/>
        </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
        <property name="pixmap">
-        <pixmap resource="Resource.qrc">:/Res/F2.png</pixmap>
+        <pixmap resource="Resource.qrc">:/Res/R4.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
        </property>
        <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
        </property>
       </widget>
      </item>
-     <item row="4" column="3">
-      <widget class="QLabel" name="label_38">
-       <property name="text">
-        <string>R2I4</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item row="1" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_35">
+        <widget class="QLabel" name="label_32">
          <property name="text">
           <string>Stero Adj.</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>Tire 3 (T)</string>
+          <string>Tire 1 (T)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -268,7 +324,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_3">
+        <widget class="QSpinBox" name="T1_t">
          <property name="maximum">
           <number>200</number>
          </property>
@@ -281,9 +337,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_12">
+        <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>Tire 3 (P)</string>
+          <string>Tire 1 (P)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -291,7 +347,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+        <widget class="QDoubleSpinBox" name="T1_p">
          <property name="minimum">
           <double>12.000000000000000</double>
          </property>
@@ -305,36 +361,6 @@
        </item>
       </layout>
      </item>
-     <item row="0" column="3">
-      <widget class="QLabel" name="label_40">
-       <property name="text">
-        <string>F2I2</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="5">
-      <widget class="QSlider" name="verticalSlider_3">
-       <property name="sliderPosition">
-        <number>50</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QSlider" name="verticalSlider">
-       <property name="sliderPosition">
-        <number>50</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
      <item row="4" column="2">
       <widget class="QLabel" name="label_37">
        <property name="text">
@@ -345,17 +371,69 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="5">
-      <widget class="QLabel" name="label_18">
-       <property name="text">
-        <string>S4</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_41">
        <property name="text">
         <string>S1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="label_45">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="Resource.qrc">:/Res/R3.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLabel" name="label_42">
+       <property name="text">
+        <string>S2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="5">
+      <widget class="QSlider" name="Sus4">
+       <property name="sliderPosition">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QSlider" name="Sus3">
+       <property name="sliderPosition">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLabel" name="label_38">
+       <property name="text">
+        <string>R2I4</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -379,7 +457,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_4">
+        <widget class="QSpinBox" name="T4_t">
          <property name="maximum">
           <number>200</number>
          </property>
@@ -402,7 +480,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+        <widget class="QDoubleSpinBox" name="T4_p">
          <property name="minimum">
           <double>12.000000000000000</double>
          </property>
@@ -416,17 +494,92 @@
        </item>
       </layout>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_17">
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_44">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
        <property name="text">
-        <string>S3</string>
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="Resource.qrc">:/Res/F2.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
        </property>
       </widget>
      </item>
-     <item row="0" column="5">
-      <widget class="QLabel" name="label_42">
-       <property name="text">
-        <string>S2</string>
+     <item row="3" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label_35">
+         <property name="text">
+          <string>Stero Adj.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Tire 3 (T)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="T3_t">
+         <property name="maximum">
+          <number>200</number>
+         </property>
+         <property name="value">
+          <number>110</number>
+         </property>
+         <property name="displayIntegerBase">
+          <number>10</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Tire 3 (P)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="T3_p">
+         <property name="minimum">
+          <double>12.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>24.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="5">
+      <widget class="QSlider" name="Sus2">
+       <property name="sliderPosition">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
@@ -458,140 +611,6 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QLabel" name="label_45">
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="Resource.qrc">:/Res/R3.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>false</bool>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_32">
-         <property name="text">
-          <string>Stero Adj.</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Tire 1 (T)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="spinBox">
-         <property name="maximum">
-          <number>200</number>
-         </property>
-         <property name="value">
-          <number>110</number>
-         </property>
-         <property name="displayIntegerBase">
-          <number>10</number>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Tire 1 (P)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
-         <property name="minimum">
-          <double>12.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.100000000000000</double>
-         </property>
-         <property name="value">
-          <double>24.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLabel" name="label_39">
-       <property name="text">
-        <string>F1I1</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QSlider" name="verticalSlider_2">
-       <property name="sliderPosition">
-        <number>50</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="5">
-      <widget class="QSlider" name="verticalSlider_4">
-       <property name="sliderPosition">
-        <number>50</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="3">
-      <widget class="QLabel" name="label_46">
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::RichText</enum>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="Resource.qrc">:/Res/R4.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>false</bool>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="4">
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -612,7 +631,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_2">
+        <widget class="QSpinBox" name="T2_t">
          <property name="maximum">
           <number>200</number>
          </property>
@@ -635,7 +654,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+        <widget class="QDoubleSpinBox" name="T2_p">
          <property name="minimum">
           <double>12.000000000000000</double>
          </property>
@@ -648,6 +667,23 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_40">
+       <property name="text">
+        <string>F2I2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>S3</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -669,14 +705,14 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLabel" name="label_16">
+      <widget class="QLabel" name="rideHeight">
        <property name="text">
         <string>Height</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QSlider" name="verticalSlider_5">
+      <widget class="QSlider" name="Fuel">
        <property name="sliderPosition">
         <number>90</number>
        </property>
@@ -721,7 +757,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_6">
+      <widget class="QCheckBox" name="D1">
        <property name="text">
         <string>Door 1</string>
        </property>
@@ -731,7 +767,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_5">
+      <widget class="QCheckBox" name="D2">
        <property name="text">
         <string>Door 2</string>
        </property>
@@ -741,7 +777,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_4">
+      <widget class="QCheckBox" name="D3">
        <property name="text">
         <string>Door 3</string>
        </property>
@@ -751,7 +787,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_8">
+      <widget class="QCheckBox" name="D4">
        <property name="text">
         <string>Door 4</string>
        </property>
@@ -761,7 +797,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_3">
+      <widget class="QCheckBox" name="EngineBay">
        <property name="text">
         <string>Engine Bay</string>
        </property>
@@ -771,7 +807,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QCheckBox" name="Hatch">
        <property name="text">
         <string>Hatch</string>
        </property>
@@ -781,14 +817,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="BayLight">
        <property name="text">
         <string>Bay Light</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_7">
+      <widget class="QCheckBox" name="HatchLight">
        <property name="text">
         <string>Hatch Light</string>
        </property>
@@ -823,7 +859,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QSpinBox" name="spinBox_5">
+      <widget class="QSpinBox" name="B1_t">
        <property name="maximum">
         <number>1000</number>
        </property>
@@ -889,7 +925,7 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QSpinBox" name="spinBox_13">
+      <widget class="QSpinBox" name="B1_w">
        <property name="maximum">
         <number>100</number>
        </property>
@@ -899,7 +935,7 @@
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QSpinBox" name="spinBox_7">
+      <widget class="QSpinBox" name="B2_t">
        <property name="maximum">
         <number>1000</number>
        </property>
@@ -909,7 +945,7 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QSpinBox" name="spinBox_9">
+      <widget class="QSpinBox" name="B3_t">
        <property name="maximum">
         <number>1000</number>
        </property>
@@ -919,7 +955,7 @@
       </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QSpinBox" name="spinBox_11">
+      <widget class="QSpinBox" name="B4_t">
        <property name="maximum">
         <number>1000</number>
        </property>
@@ -929,7 +965,7 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QSpinBox" name="spinBox_14">
+      <widget class="QSpinBox" name="B2_w">
        <property name="maximum">
         <number>100</number>
        </property>
@@ -939,7 +975,7 @@
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QSpinBox" name="spinBox_15">
+      <widget class="QSpinBox" name="B3_w">
        <property name="maximum">
         <number>100</number>
        </property>
@@ -949,7 +985,7 @@
       </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QSpinBox" name="spinBox_16">
+      <widget class="QSpinBox" name="B4_w">
        <property name="maximum">
         <number>100</number>
        </property>
@@ -976,11 +1012,41 @@
       <x>60</x>
       <y>670</y>
       <width>671</width>
-      <height>31</height>
+      <height>33</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
-     <item row="1" column="1">
+     <item row="1" column="7">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Accelerate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLCDNumber" name="lcdNumber">
+       <property name="value" stdset="0">
+        <double>0.000000000000000</double>
+       </property>
+       <property name="intValue" stdset="0">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="8">
+      <widget class="QPushButton" name="Accelerator">
+       <property name="text">
+        <string>Decelerate</string>
+       </property>
+       <property name="shortcut">
+        <string comment=" "/>
+       </property>
+       <property name="autoRepeat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
       <widget class="QLabel" name="label_19">
        <property name="text">
         <string>RPM</string>
@@ -991,43 +1057,20 @@
       </widget>
      </item>
      <item row="1" column="0">
+      <widget class="QPushButton" name="GearShift">
+       <property name="text">
+        <string>Down Shift</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>Shift</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="6">
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Accelerate</string>
-       </property>
-       <property name="shortcut">
-        <string comment=" "/>
-       </property>
-       <property name="autoRepeat">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLCDNumber" name="lcdNumber">
-       <property name="value" stdset="0">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="intValue" stdset="0">
-        <number>0</number>
+        <string>Up Shift</string>
        </property>
       </widget>
      </item>
      <item row="1" column="5">
-      <widget class="QLabel" name="label_20">
-       <property name="text">
-        <string>Speed</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="4">
       <widget class="QLCDNumber" name="lcdNumber_2">
        <property name="value" stdset="0">
         <double>0.000000000000000</double>
@@ -1036,6 +1079,26 @@
         <number>0</number>
        </property>
       </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>Speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </widget>
@@ -1071,22 +1134,5 @@
  <resources>
   <include location="Resource.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>pressed()</signal>
-   <receiver>lcdNumber_2</receiver>
-   <slot>setBinMode()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>676</x>
-     <y>685</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>451</x>
-     <y>685</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
