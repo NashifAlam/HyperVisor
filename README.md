@@ -16,7 +16,8 @@ A Simulation software to mimic sensor array in a High Performance Vehicle or an 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/NashifAlam/HyperVisor/blob/main/Screenshot_20230214_151108.png)
+<!--[![Product Name Screen Shot][product-screenshot]](https://github.com/NashifAlam/HyperVisor/blob/main/Screenshot_20230214_151108.png)-->
+![Alt text](Screenshot_20230214_151108.png?raw=true "Software Screenshot")
 
 
 
