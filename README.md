@@ -68,7 +68,7 @@ To get a local copy up and running follow these simple example steps.
  
 1. Clone the repo
    ```sh
-   git clone https://github.com/NashifAlam/https://github.com/NashifAlam/HyperVisor.git
+   git clone https://github.com/NashifAlam/HyperVisor.git
    ```
 2. Update the configuration, alternatively open an existing project in Qt creator and select ``` cmakeLists.txt ```
 <a href="">(_Refer package documentions_)</a>
