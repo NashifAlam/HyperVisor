@@ -17,7 +17,7 @@ A Simulation software to mimic sensor array in a High Performance Vehicle or an 
 ## About The Project
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://github.com/NashifAlam/HyperVisor/blob/main/Screenshot_20230214_151108.png)-->
-![Alt text](Screenshot_20230214_151108.png?raw=true "Software Screenshot")
+![Screenshot](Resources/Screenshot.png?raw=true "Software Screenshot")
 
 
 
@@ -68,7 +68,7 @@ To get a local copy up and running follow these simple example steps.
  
 1. Clone the repo
    ```sh
-   git clone https://github.com/NashifAlam/https://github.com/NashifAlam/HyperVisor.git
+   git clone https://github.com/NashifAlam/HyperVisor.git
    ```
 2. Update the configuration, alternatively open an existing project in Qt creator and select ``` cmakeLists.txt ```
 <a href="">(_Refer package documentions_)</a>
