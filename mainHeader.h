@@ -11,6 +11,8 @@
 
 #include <QMainWindow>
 
+
+//Class defination and initialisation
 class preProcessor{
     private:
         int a =10;
@@ -31,6 +33,7 @@ class preProcessor{
 
 };
 
+//Feeding binary values into the array to generate binary string octet
 int preProcessor::initialise(int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8)
 {
     int A[8]={a_1,a_2,a_3,a_4,a_5,a_6,a_7,a_8};
@@ -43,6 +46,8 @@ int preProcessor::initialise(int a_1, int a_2, int a_3, int a_4, int a_5, int a_
     return output;
 }
 
+
+//Value Renderer: Adding consistency bit to keep value stable
 void preProcessor::valueRenderer(int index,int value)
 {
     switch (index) {
@@ -67,6 +72,11 @@ void preProcessor::valueRenderer(int index,int value)
             break;
     }
 }
+
+
+//All sensor check code blocks
+//Multiplier determines the value to be toggled, value is binary for checks
+
 
 void preProcessor::checkTyre(int multiplier, int value)
 {
@@ -196,6 +206,8 @@ void preProcessor::DiagnosticData(int multiplier, int value)
     Relay();
 }
 
+
+//Transfer string parser
 void preProcessor::Relay()
 {
     QString Tyr = QString::number(TyreString), Br = QString::number(BrakeString), Ds = QString::number(DoorString),
