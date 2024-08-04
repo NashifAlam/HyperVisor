@@ -22,7 +22,7 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        mainHeader.h
+        mainFunctions.h
         mainwindow.ui
        # Sensors.h
        # AnrduNode.cpp
@@ -48,7 +48,8 @@ else()
     else()
         add_executable(SoftwareTestBench
             ${PROJECT_SOURCES}
-            mainHeader.cpp
+
+            mainFunctions.cpp
         )
     endif()
 endif()
