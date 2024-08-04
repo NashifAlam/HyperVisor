@@ -1,6 +1,6 @@
-#ifndef MAINFUNCTIONS_H
-#define MAINFUNCTIONS_H
-
+//#ifndef MAINFUNCTIONS_H
+//#define MAINFUNCTIONS_H
+#include "mainFunctions.h"
 #define FrontTyrePressureThreshold 20
 #define RearTyrePressureThreshold 24
 
@@ -15,42 +15,46 @@
 
 
 //Class defination and initialisation
-class preProcessor{
+/*class preProcessor{
 private:
     int a =10;
-    int TyreString = 0, BrakeString = 0, DoorString = 0, ToggleString = 0, DiagnosticString = 0;
+    int TyreString = 0,
+        BrakeString = 0,
+        DoorString = 0,
+        ToggleString = 0,
+        DiagnosticString = 0;
 public:
     //Variables
     int generatedValue;
 
     //Functions
-    int initialise(int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8);
-    void valueRenderer(int index, int value);
-    void checkTyre(int multiplier, int value);
-    void checkBrakes(int multiplier, int value);
-    void checkDoors(int multiplier, int value);
-    void ToggleValues(int mulitplier, int value);
-    void DiagnosticData(int multiplier, int value);
+    int initialise();
+    void valueRenderer(int index, bool value);
+    void checkTyre(int shifter, bool value);
+    void checkBrakes(int shifter, bool value);
+    void checkDoors(int shifter, bool value);
+    void ToggleValues(int mulitplier, bool value);
+    void DiagnosticData(int shifter, bool value);
     void Relay();
 
-};
+};/*
 
 //Feeding binary values into the array to generate binary string octet
-int preProcessor::initialise(int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8)
+int preProcessor::initialise()
 {
     int A[8]={a_1,a_2,a_3,a_4,a_5,a_6,a_7,a_8};
     int output =0;
-    for(int temp =0, multiplier=10000000; temp <8; temp++)
+    for(int temp =0, shifter=10000000; temp <8; temp++)
     {
-        output += multiplier * A[temp];
-        multiplier /= 10;
+        output += shifter * A[temp];
+        shifter /= 10;
     }
     return output;
 }
-
-
+*/
+/*
 //Value Renderer: Adding consistency bit to keep value stable
-void preProcessor::valueRenderer(int index,int value)
+void preProcessor::valueRenderer(int index,bool value)
 {
 
     switch (index) {
@@ -74,136 +78,55 @@ void preProcessor::valueRenderer(int index,int value)
         DiagnosticString = value +  100000000;
         break;
     }
-}
+}*/
 
 
 //All sensor check code blocks
-//Multiplier determines the value to be toggled, value is binary for checks
+//shifter determines the value to be toggled, value is binary for checks
 
 
-void preProcessor::checkTyre(int multiplier, int value)
+void preProcessor::checkTyre(int shifter, bool value)
 {
-    int temp[8];
-    int flag = TyreString;
-    switch (multiplier) {
-    case 1: temp[0]=value; break;
-    case 10: temp[1]=value; break;
-    case 100: temp[2]=value; break;
-    case 1000: temp[3]=value; break;
-    case 10000: temp[4]=value; break;
-    case 100000: temp[5]=value; break;
-    case 1000000: temp[6]=value; break;
-    case 10000000: temp[7]=value; break;
-    }
 
-
-    flag = flag/multiplier;
-    flag = flag % 10;
-    flag = flag * multiplier;
-    TyreString = (TyreString - flag) + (multiplier * value);
+    TyreString = (value << shifter);
 
     qDebug() << TyreString;
     //return 0;
     Relay();
 }
 
-void preProcessor::checkBrakes(int multiplier, int value)
+void preProcessor::checkBrakes(int shifter, bool value)
 {
-    //return 0;
-    int temp[8];
-    int flag = BrakeString;
-    switch (multiplier) {
-    case 1: temp[0]=value; break;
-    case 10: temp[1]=value; break;
-    case 100: temp[2]=value; break;
-    case 1000: temp[3]=value; break;
-    case 10000: temp[4]=value; break;
-    case 100000: temp[5]=value; break;
-    case 1000000: temp[6]=value; break;
-    case 10000000: temp[7]=value; break;
-    }
 
-
-    flag = flag/multiplier;
-    flag = flag % 10;
-    flag = flag * multiplier;
-    BrakeString = (BrakeString - flag) + (multiplier * value);
+    BrakeString = (value << shifter);
 
 
     qDebug() << BrakeString;
     Relay();
 }
 
-void preProcessor::checkDoors(int multiplier, int value)
+void preProcessor::checkDoors(int shifter, bool value)
 {
-    int temp[8];
-    int flag = DoorString;
-    switch (multiplier) {
-    case 1: temp[0]=value; break;
-    case 10: temp[1]=value; break;
-    case 100: temp[2]=value; break;
-    case 1000: temp[3]=value; break;
-    case 10000: temp[4]=value; break;
-    case 100000: temp[5]=value; break;
-    case 1000000: temp[6]=value; break;
-    case 10000000: temp[7]=value; break;
-    }
 
-
-    flag = flag/multiplier;
-    flag = flag % 10;
-    flag = flag * multiplier;
-    DoorString = (DoorString - flag) + (multiplier * value);
+    DoorString = (value << shifter);
 
     qDebug() <<DoorString;
     Relay();
 }
 
-void preProcessor::ToggleValues(int multiplier, int value)
+void preProcessor::ToggleValues(int shifter, bool value)
 {
-    int temp[8];
-    int flag = ToggleString;
-    switch (multiplier) {
-    case 1: temp[0]=value; break;
-    case 10: temp[1]=value; break;
-    case 100: temp[2]=value; break;
-    case 1000: temp[3]=value; break;
-    case 10000: temp[4]=value; break;
-    case 100000: temp[5]=value; break;
-    case 1000000: temp[6]=value; break;
-    case 10000000: temp[7]=value; break;
-    }
 
-
-    flag = flag/multiplier;
-    flag = flag % 10;
-    flag = flag * multiplier;
-    ToggleString = (ToggleString - flag) + (multiplier * value);
+    ToggleString = (value << shifter);
 
     qDebug() << ToggleString;
     Relay();
 }
 
-void preProcessor::DiagnosticData(int multiplier, int value)
+void preProcessor::DiagnosticData(int shifter, bool value)
 {
-    int temp[8];
-    int flag = DiagnosticString;
-    switch (multiplier) {
-    case 1: temp[0]=value; break;
-    case 10: temp[1]=value; break;
-    case 100: temp[2]=value; break;
-    case 1000: temp[3]=value; break;
-    case 10000: temp[4]=value; break;
-    case 100000: temp[5]=value; break;
-    case 1000000: temp[6]=value; break;
-    case 10000000: temp[7]=value; break;
-    }
 
-
-    flag = flag/multiplier;
-    flag = flag % 10;
-    flag = flag * multiplier;
-    DiagnosticString = (DiagnosticString - flag) + (multiplier * value);
+    DiagnosticString = (value << shifter);
 
     qDebug() << DiagnosticString;
     Relay();
@@ -213,10 +136,13 @@ void preProcessor::DiagnosticData(int multiplier, int value)
 //Transfer string parser
 void preProcessor::Relay()
 {
-    QString Tyr = QString::number(TyreString), Br = QString::number(BrakeString), Ds = QString::number(DoorString),
-        Ts = QString::number(ToggleString);// Dia = QString::number(DiagnosticString);
+    //QString Tyr = QString::number(TyreString), Br = QString::number(BrakeString), Ds = QString::number(DoorString),
+    //    Ts = QString::number(ToggleString);// Dia = QString::number(DiagnosticString);
 
-    QString Output = "[" + Tyr + "," + Br + "," +  Ds + "," + Ts + "]" ;
+    int compiledValue = 0;
+    compiledValue = (DiagnosticString << 24)|(ToggleString << 16)|(BrakeString << 8)|(TyreString);
+
+    QString Output = "[" + QString::number(compiledValue) + "]" ;
 
     qDebug() << "Final String" <<Output;
 
@@ -224,4 +150,4 @@ void preProcessor::Relay()
 }
 
 
-#endif // MAINFUNCTIONS_H
+//#endif // MAINFUNCTIONS_H

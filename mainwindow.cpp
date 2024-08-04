@@ -36,51 +36,51 @@ MainWindow::MainWindow(QWidget *parent)
     //Initialise
     //Run during first setup to set values to the compression algorithm
 
-    //Front tyre binary block initialisation
-    preProcessorClass.valueRenderer(1, preProcessorClass.initialise(
-                                        ((ui->T1_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T2_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T3_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T4_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T1_p->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T2_p->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T3_p->value() > FrontTyrePressureThreshold) ? 0 : 1),
-                                        ((ui->T4_p->value() > FrontTyrePressureThreshold) ? 0 : 1)
-                                        ));
+//     //Front tyre binary block initialisation
+//     preProcessorClass.valueRenderer(1, preProcessorClass.initialise(
+//                                         ((ui->T1_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T2_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T3_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T4_t->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T1_p->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T2_p->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T3_p->value() > FrontTyrePressureThreshold) ? 0 : 1),
+//                                         ((ui->T4_p->value() > FrontTyrePressureThreshold) ? 0 : 1)
+//                                         ));
 
 
-    //Brake values binary block initialisation
-    preProcessorClass.valueRenderer(2, preProcessorClass.initialise(
-                                        ((ui->B1_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
-                                        ((ui->B1_w->value() > BrakeWearThreshold) ? 0 : 1),
-                                        ((ui->B2_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
-                                        ((ui->B2_w->value() > BrakeWearThreshold) ? 0 : 1),
-                                        ((ui->B3_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
-                                        ((ui->B3_w->value() > BrakeWearThreshold) ? 0 : 1),
-                                        ((ui->B4_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
-                                        ((ui->B4_w->value() > BrakeWearThreshold) ? 0 : 1)
-                                        ));
+//     //Brake values binary block initialisation
+//     preProcessorClass.valueRenderer(2, preProcessorClass.initialise(
+//                                         ((ui->B1_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
+//                                         ((ui->B1_w->value() > BrakeWearThreshold) ? 0 : 1),
+//                                         ((ui->B2_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
+//                                         ((ui->B2_w->value() > BrakeWearThreshold) ? 0 : 1),
+//                                         ((ui->B3_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
+//                                         ((ui->B3_w->value() > BrakeWearThreshold) ? 0 : 1),
+//                                         ((ui->B4_t->value() > BrakeTemperatureThreshold) ? 0 : 1),
+//                                         ((ui->B4_w->value() > BrakeWearThreshold) ? 0 : 1)
+//                                         ));
 
 
-    //Toggles initialisation
-    preProcessorClass.valueRenderer(3, preProcessorClass.initialise(
-                                        ui->D1->isChecked(), ui->D2->isChecked(), ui->D3->isChecked(), ui->D4->isChecked(),
-                                        ui->EngineBay->isChecked(),ui->Hatch->isChecked(), ui->BayLight->isChecked(), ui->HatchLight->isChecked()
-                                        ));
+//     //Toggles initialisation
+//     preProcessorClass.valueRenderer(3, preProcessorClass.initialise(
+//                                         ui->D1->isChecked(), ui->D2->isChecked(), ui->D3->isChecked(), ui->D4->isChecked(),
+//                                         ui->EngineBay->isChecked(),ui->Hatch->isChecked(), ui->BayLight->isChecked(), ui->HatchLight->isChecked()
+//                                         ));
 
-    //High performance metrics initialisation
-    preProcessorClass.valueRenderer(4, preProcessorClass.initialise(
-                                        ui->Nitro->isChecked(), ui->DRS->isChecked(), ui->ExhaustBypass->isChecked(),
-                                        ui->TC->isChecked(), ui->ABS->isChecked(), ui->Cabin->isChecked(),
-                                        ui->Engine->isChecked(), ui->OilPressure->isChecked()
-                                        ));
-    //preProcessorClass.Relay();
-    //qDebug() << "Message to device: ";
-    //Function to initialise all variables
-    setWindowTitle(tr("OBD2 CAN Bus Simulator"));
+//     //High performance metrics initialisation
+//     preProcessorClass.valueRenderer(4, preProcessorClass.initialise(
+//                                         ui->Nitro->isChecked(), ui->DRS->isChecked(), ui->ExhaustBypass->isChecked(),
+//                                         ui->TC->isChecked(), ui->ABS->isChecked(), ui->Cabin->isChecked(),
+//                                         ui->Engine->isChecked(), ui->OilPressure->isChecked()
+//                                         ));
+     //preProcessorClass.Relay();
+     //qDebug() << "Message to device: ";
+     //Function to initialise all variables
+     setWindowTitle(tr("OBD2 CAN Bus Simulator"));
 
-    //TODO: Add windows logo
-}
+     //TODO: Add windows logo
+ }
 
 
 MainWindow::~MainWindow()
@@ -98,26 +98,26 @@ void MainWindow::on_T1_t_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T1_t->value();
     qDebug() << "Message to device: T1_t " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(1, ((ui->T1_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(0, ((ui->T1_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
 
 }
 void MainWindow::on_T2_t_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T2_t->value();
     qDebug() << "Message to device: T2_t " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(10, ((ui->T2_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(1, ((ui->T2_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
 }
 void MainWindow::on_T3_t_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T3_t->value();
     qDebug() << "Message to device: T3_t " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(100, ((ui->T3_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(2, ((ui->T3_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
 }
 void MainWindow::on_T4_t_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T4_t->value();
     qDebug() << "Message to device: T4_t " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(1000, ((ui->T4_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(3, ((ui->T4_t->value() > TyreTemperatureThreshold) ? 0 : 1) );
 }
 
 
@@ -127,25 +127,25 @@ void MainWindow::on_T1_p_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T1_p->value();
     qDebug() << "Message to device: T1_p " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(10000, ((ui->T1_p->value() > FrontTyrePressureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(4, ((ui->T1_p->value() > FrontTyrePressureThreshold) ? 0 : 1) );
 }
 void MainWindow::on_T2_p_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T2_p->value();
     qDebug() << "Message to device: T2_p " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(100000, ((ui->T2_p->value() >FrontTyrePressureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(5, ((ui->T2_p->value() >FrontTyrePressureThreshold) ? 0 : 1) );
 }
 void MainWindow::on_T3_p_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T3_p->value();
     qDebug() << "Message to device: T3_p " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(1000000, ((ui->T3_p->value() > RearTyrePressureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(6, ((ui->T3_p->value() > RearTyrePressureThreshold) ? 0 : 1) );
 }
 void MainWindow::on_T4_p_editingFinished()
 {
     preProcessorClass.generatedValue = ui->T4_p->value();
     qDebug() << "Message to device: T4_p " << preProcessorClass.generatedValue;
-    preProcessorClass.checkTyre(10000000, ((ui->T4_p->value() > RearTyrePressureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(7, ((ui->T4_p->value() > RearTyrePressureThreshold) ? 0 : 1) );
 }
 
 
@@ -157,7 +157,7 @@ void MainWindow::on_D1_toggled(bool checked)
     else
         qDebug() << "Door 1 opened";
 
-    preProcessorClass.checkDoors(1, ui->D1->isChecked());
+    preProcessorClass.checkDoors(0, ui->D1->isChecked());
     //preProcessorClass.Relay();
 }
 
@@ -168,7 +168,7 @@ void MainWindow::on_D2_toggled(bool checked)
     else
         qDebug() << "Door 2 opened";
 
-    preProcessorClass.checkDoors(10, ui->D2->isChecked());
+    preProcessorClass.checkDoors(1, ui->D2->isChecked());
     //preProcessorClass.Relay();
 }
 
@@ -179,7 +179,7 @@ void MainWindow::on_D3_toggled(bool checked)
     else
         qDebug() << "Door 3 opened";
 
-    preProcessorClass.checkDoors(100, ui->D3->isChecked());
+    preProcessorClass.checkDoors(2, ui->D3->isChecked());
     //preProcessorClass.Relay();
 }
 
@@ -190,7 +190,7 @@ void MainWindow::on_D4_toggled(bool checked)
     else
         qDebug() << "Door 4 opened";
 
-    preProcessorClass.checkDoors(1000, ui->D4->isChecked());
+    preProcessorClass.checkDoors(3, ui->D4->isChecked());
 }
 
 void MainWindow::on_EngineBay_toggled(bool checked)
@@ -200,7 +200,7 @@ void MainWindow::on_EngineBay_toggled(bool checked)
     else
         qDebug() << "Engine Bay opened";
 
-    preProcessorClass.checkDoors(10000, ui->EngineBay->isChecked());
+    preProcessorClass.checkDoors(4, ui->EngineBay->isChecked());
 }
 
 void MainWindow::on_Hatch_toggled(bool checked)
@@ -210,7 +210,7 @@ void MainWindow::on_Hatch_toggled(bool checked)
     else
         qDebug() << "Hatch is opened";
 
-    preProcessorClass.checkDoors(100000, ui->Hatch->isChecked());
+    preProcessorClass.checkDoors(5, ui->Hatch->isChecked());
 }
 
 void MainWindow::on_BayLight_toggled(bool checked)
@@ -220,7 +220,7 @@ void MainWindow::on_BayLight_toggled(bool checked)
     else
         qDebug() << "Bay Light is on";
 
-    preProcessorClass.checkDoors(1000000, ui->BayLight->isChecked());
+    preProcessorClass.checkDoors(6, ui->BayLight->isChecked());
 }
 
 void MainWindow::on_HatchLight_toggled(bool checked)
@@ -230,7 +230,7 @@ void MainWindow::on_HatchLight_toggled(bool checked)
     else
         qDebug() << "Hatch Light is on";
 
-    preProcessorClass.checkDoors(10000000, ui->HatchLight->isChecked());
+    preProcessorClass.checkDoors(7, ui->HatchLight->isChecked());
 }
 
 
@@ -238,49 +238,49 @@ void MainWindow::on_HatchLight_toggled(bool checked)
 void MainWindow::on_B1_t_editingFinished()
 {
     qDebug() << "Message to device: B1_t " << ui->B1_t->value();
-    preProcessorClass.checkTyre(1, ((ui->B1_t->value() > BrakeTemperatureThreshold) ? 0 : 1));
+    preProcessorClass.checkTyre(0, ((ui->B1_t->value() > BrakeTemperatureThreshold) ? 0 : 1));
 }
 
 void MainWindow::on_B1_w_editingFinished()
 {
     qDebug() << "Message to device: B1_w " << ui->B1_w->value();
-    preProcessorClass.checkTyre(10, ((ui->B1_w->value() > BrakeWearThreshold) ? 0 : 1));
+    preProcessorClass.checkTyre(1, ((ui->B1_w->value() > BrakeWearThreshold) ? 0 : 1));
 }
 
 void MainWindow::on_B2_t_editingFinished()
 {
     qDebug() << "Message to device: B2_t " << ui->B2_t->value();
-    preProcessorClass.checkTyre(100, ((ui->B2_t->value() > BrakeTemperatureThreshold) ? 0 : 1));
+    preProcessorClass.checkTyre(2, ((ui->B2_t->value() > BrakeTemperatureThreshold) ? 0 : 1));
 }
 
 void MainWindow::on_B2_w_editingFinished()
 {
     qDebug() << "Message to device: B2_w " << ui->B2_w->value();
-    preProcessorClass.checkTyre(1000, ((ui->B2_w->value() > BrakeWearThreshold) ? 0 : 1));
+    preProcessorClass.checkTyre(3, ((ui->B2_w->value() > BrakeWearThreshold) ? 0 : 1));
 }
 
 void MainWindow::on_B3_t_editingFinished()
 {
     qDebug() << "Message to device: B3_t " << ui->B3_t->value();
-    preProcessorClass.checkTyre(10000, ((ui->B3_t->value() > BrakeTemperatureThreshold) ? 0 : 1));
+    preProcessorClass.checkTyre(4, ((ui->B3_t->value() > BrakeTemperatureThreshold) ? 0 : 1));
 }
 
 void MainWindow::on_B3_w_editingFinished()
 {
     qDebug() << "Message to device: B3_w " << ui->B3_w->value();
-    preProcessorClass.checkTyre(100000, ((ui->B4_w->value() > BrakeWearThreshold) ? 0 : 1));
+    preProcessorClass.checkTyre(5, ((ui->B4_w->value() > BrakeWearThreshold) ? 0 : 1));
 }
 
 void MainWindow::on_B4_t_editingFinished()
 {
     qDebug() << "Message to device: B4_t " << ui->B4_t->value();
-    preProcessorClass.checkTyre(1000000, ((ui->B4_t->value() > BrakeTemperatureThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(6, ((ui->B4_t->value() > BrakeTemperatureThreshold) ? 0 : 1) );
 }
 
 void MainWindow::on_B4_w_editingFinished()
 {
     qDebug() << "Message to device: B4_w " << ui->B4_w->value();
-    preProcessorClass.checkTyre(10000000, ((ui->B4_w->value() > BrakeWearThreshold) ? 0 : 1) );
+    preProcessorClass.checkTyre(7, ((ui->B4_w->value() > BrakeWearThreshold) ? 0 : 1) );
 }
 
 
@@ -292,7 +292,7 @@ void MainWindow::on_Nitro_toggled(bool checked)
     else
         qDebug() << "Nitros Engaged";
 
-    preProcessorClass.ToggleValues(1, ui->Nitro->isChecked());
+    preProcessorClass.ToggleValues(0, ui->Nitro->isChecked());
 }
 
 void MainWindow::on_DRS_toggled(bool checked)
@@ -302,7 +302,7 @@ void MainWindow::on_DRS_toggled(bool checked)
     else
         qDebug() << "DRS Activated";
 
-    preProcessorClass.ToggleValues(10, ui->DRS->isChecked());
+    preProcessorClass.ToggleValues(1, ui->DRS->isChecked());
 }
 
 void MainWindow::on_ExhaustBypass_toggled(bool checked)
@@ -312,7 +312,7 @@ void MainWindow::on_ExhaustBypass_toggled(bool checked)
     else
         qDebug() << "Door 1 opened";
 
-    preProcessorClass.ToggleValues(100, ui->ExhaustBypass->isChecked());
+    preProcessorClass.ToggleValues(2, ui->ExhaustBypass->isChecked());
 }
 
 void MainWindow::on_TC_toggled(bool checked)
@@ -322,7 +322,7 @@ void MainWindow::on_TC_toggled(bool checked)
     else
         qDebug() << "Traction control on";
 
-    preProcessorClass.ToggleValues(1000, ui->TC->isChecked());
+    preProcessorClass.ToggleValues(3, ui->TC->isChecked());
 }
 
 void MainWindow::on_ABS_toggled(bool checked)
@@ -332,7 +332,7 @@ void MainWindow::on_ABS_toggled(bool checked)
     else
         qDebug() << "ABS on";
 
-    preProcessorClass.ToggleValues(10000, ui->ABS->isChecked());
+    preProcessorClass.ToggleValues(4, ui->ABS->isChecked());
 }
 
 void MainWindow::on_Cabin_toggled(bool checked)
@@ -342,7 +342,7 @@ void MainWindow::on_Cabin_toggled(bool checked)
     else
         qDebug() << "Clean air";
 
-    preProcessorClass.ToggleValues(100000, ui->Cabin->isChecked());
+    preProcessorClass.ToggleValues(5, ui->Cabin->isChecked());
 }
 
 void MainWindow::on_Engine_toggled(bool checked)
@@ -352,7 +352,7 @@ void MainWindow::on_Engine_toggled(bool checked)
     else
         qDebug() << "Engine Okay";
 
-    preProcessorClass.ToggleValues(1000000, ui->Engine->isChecked());
+    preProcessorClass.ToggleValues(6, ui->Engine->isChecked());
 }
 
 void MainWindow::on_OilPressure_toggled(bool checked)
@@ -362,7 +362,7 @@ void MainWindow::on_OilPressure_toggled(bool checked)
     else
         qDebug() << "Oil pressure okay";
 
-    preProcessorClass.ToggleValues(10000000, ui->OilPressure->isChecked());
+    preProcessorClass.ToggleValues(7, ui->OilPressure->isChecked());
 }
 
 

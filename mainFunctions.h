@@ -16,19 +16,24 @@
 class preProcessor{
     private:
         int a =10;
-        int TyreString = 0, BrakeString = 0, DoorString = 0, ToggleString = 0, DiagnosticString = 0;
+        char
+            TyreString = 0,
+            BrakeString = 0,
+            DoorString = 0,
+            ToggleString = 0,
+            DiagnosticString = 0;
      public:
         //Variables
         int generatedValue;
 
         //Functions
-        int initialise(int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8);
-        void valueRenderer(int index, int value);
-        void checkTyre(int multiplier, int value);
-        void checkBrakes(int multiplier, int value);
-        void checkDoors(int multiplier, int value);
-        void ToggleValues(int mulitplier, int value);
-        void DiagnosticData(int multiplier, int value);
+        //int initialise(int a_1, int a_2, int a_3, int a_4, int a_5, int a_6, int a_7, int a_8);
+        //void valueRenderer(int index, int value);
+        void checkTyre(int multiplier, bool value);
+        void checkBrakes(int multiplier, bool value);
+        void checkDoors(int multiplier, bool value);
+        void ToggleValues(int mulitplier, bool value);
+        void DiagnosticData(int multiplier, bool value);
         void Relay();
 
 };
