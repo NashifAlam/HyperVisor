@@ -1,3 +1,5 @@
+//This is the main
+
 #include "mainwindow.h"
 
 #include <QApplication>

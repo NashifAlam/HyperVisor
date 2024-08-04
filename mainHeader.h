@@ -10,7 +10,7 @@
 #define BrakeWearThreshold 78
 
 #include <QMainWindow>
-
+#include <QDebug>
 
 //Class defination and initialisation
 class preProcessor{

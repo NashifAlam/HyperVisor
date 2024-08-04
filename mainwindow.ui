@@ -23,10 +23,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>1120</x>
-      <y>20</y>
+      <x>1130</x>
+      <y>30</y>
       <width>211</width>
-      <height>671</height>
+      <height>681</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -213,25 +213,29 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_16">
+      <widget class="QLabel" name="label_49">
        <property name="text">
+        <string>Hardware Port Select </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="serialPortSelect_comboBox">
+       <property name="toolTip">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="serialPortSelect_comboBox"/>
-     </item>
-     <item>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="2" column="1">
+       <item row="2" column="1" alignment="Qt::AlignVCenter">
         <widget class="QPushButton" name="disconnect_button">
          <property name="text">
           <string>disconnect</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="2" column="0" alignment="Qt::AlignVCenter">
         <widget class="QPushButton" name="connect_button">
          <property name="text">
           <string>connect</string>
@@ -240,13 +244,20 @@
        </item>
       </layout>
      </item>
+     <item>
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>20</y>
+      <y>30</y>
       <width>671</width>
       <height>641</height>
      </rect>
@@ -838,7 +849,7 @@
       <x>810</x>
       <y>360</y>
       <width>154</width>
-      <height>311</height>
+      <height>281</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
