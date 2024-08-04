@@ -48,6 +48,7 @@ else()
     else()
         add_executable(SoftwareTestBench
             ${PROJECT_SOURCES}
+            mainHeader.cpp
         )
     endif()
 endif()
